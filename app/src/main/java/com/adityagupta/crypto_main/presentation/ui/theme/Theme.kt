@@ -1,6 +1,5 @@
-package com.adityagupta.crypto_main.ui.theme
+package com.adityagupta.crypto_main.presentation.ui.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors

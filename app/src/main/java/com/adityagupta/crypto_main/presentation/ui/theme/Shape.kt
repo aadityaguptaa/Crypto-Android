@@ -1,4 +1,4 @@
-package com.adityagupta.crypto_main.ui.theme
+package com.adityagupta.crypto_main.presentation.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
