@@ -11,6 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import com.adityagupta.crypto_main.data.remote.dto.TeamMember
+import com.adityagupta.crypto_main.presentation.ui.theme.GoogleBlue
+import com.adityagupta.crypto_main.presentation.ui.theme.GoogleGreen
+import com.adityagupta.crypto_main.presentation.ui.theme.GoogleRed
+import com.adityagupta.crypto_main.presentation.ui.theme.GoogleYellow
 
 @Composable
 fun TeamListItem(
@@ -23,13 +27,14 @@ fun TeamListItem(
     ){
         Text(
             text = teamMember.name,
-            style = MaterialTheme.typography.h4
+            style = MaterialTheme.typography.h4,
+            color = GoogleYellow
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
             text = teamMember.position,
             style = MaterialTheme.typography.body2,
-            fontStyle = FontStyle.Italic
+            fontStyle = FontStyle.Italic,
         )
     }
 

@@ -19,9 +19,13 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.adityagupta.crypto_main.presentation.Screen
+import com.adityagupta.crypto_main.presentation.coin_detail.components.CoinLinks
 import com.adityagupta.crypto_main.presentation.coin_detail.components.CoinTag
 import com.adityagupta.crypto_main.presentation.coin_detail.components.TeamListItem
 import com.adityagupta.crypto_main.presentation.coin_list.components.CoinListItem
+import com.adityagupta.crypto_main.presentation.ui.theme.GoogleBlue
+import com.adityagupta.crypto_main.presentation.ui.theme.GoogleGreen
+import com.adityagupta.crypto_main.presentation.ui.theme.GoogleRed
 import com.google.accompanist.flowlayout.FlowRow
 
 @Composable
@@ -38,13 +42,14 @@ fun CoinDetailScreen(
                         horizontalArrangement = Arrangement.SpaceBetween
                     ){
                         Text(
-                            text = "${coin.rank}, ${coin.name} (${coin.symbol})",
+                            text = "${coin.rank}. ${coin.name} (${coin.symbol})",
                             style = MaterialTheme.typography.h2,
-                            modifier = Modifier.weight(8f)
+                            modifier = Modifier.weight(8f),
+                            color = GoogleBlue
                         )
                         Text(
                             text = if(coin.isActive) "active" else "inactive",
-                            color = if(coin.isActive) Color.Green else Color.Red,
+                            color = if(coin.isActive) GoogleBlue else Color.Red,
                             fontStyle = FontStyle.Italic,
                             textAlign = TextAlign.End,
                             modifier = Modifier
@@ -55,12 +60,14 @@ fun CoinDetailScreen(
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
                         text = coin.description,
-                        style = MaterialTheme.typography.body2
+                        style = MaterialTheme.typography.body2,
+
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
                         text = "Tags",
-                        style = MaterialTheme.typography.h3
+                        style = MaterialTheme.typography.h3,
+                        color = GoogleBlue
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     FlowRow(
@@ -73,9 +80,14 @@ fun CoinDetailScreen(
                         }
                     }
                     Spacer(modifier = Modifier.height(15.dp))
+
+                    CoinLinks(links = listOf())
+
+                    Spacer(modifier = Modifier.height(15.dp))
                     Text(
                         text = "Team members",
-                        style = MaterialTheme.typography.h3
+                        style = MaterialTheme.typography.h3,
+                        color = GoogleBlue
                     )
                     Spacer(modifier = Modifier.height(15.dp))
 
@@ -88,6 +100,7 @@ fun CoinDetailScreen(
                     Divider()
                     
                 }
+
             }
         }
        

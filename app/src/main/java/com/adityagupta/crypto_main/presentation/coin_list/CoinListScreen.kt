@@ -18,6 +18,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.adityagupta.crypto_main.presentation.Screen
 import com.adityagupta.crypto_main.presentation.coin_list.components.CoinListItem
+import com.adityagupta.crypto_main.presentation.ui.theme.GoogleYellow
 
 @Composable
 fun CoinListScreen(
@@ -25,7 +26,9 @@ fun CoinListScreen(
     viewModel: CoinListViewModel = hiltViewModel()
 ){
     val state = viewModel.state.value
-    Box(modifier = Modifier.fillMaxSize()){
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .padding(8.dp)){
         LazyColumn(modifier = Modifier.fillMaxSize()){
             items(state.coins){ coin -> 
                 CoinListItem(
@@ -47,7 +50,8 @@ fun CoinListScreen(
             )
         }
         if(state.isLoading){
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center),
+            color = GoogleYellow)
         }
     }
 }
